@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "horizontal-shell": "apps/horizontal-shell",
+    "horizontal-shell-e2e": "apps/horizontal-shell-e2e"
+  }
 }
