@@ -1,9 +1,4 @@
 {
   "version": 2,
-  "projects": {
-    "horizontal-mfe-a-catalog": "apps/horizontal-mfe-a-catalog",
-    "horizontal-mfe-a-catalog-e2e": "apps/horizontal-mfe-a-catalog-e2e",
-    "horizontal-shell": "apps/horizontal-shell",
-    "horizontal-shell-e2e": "apps/horizontal-shell-e2e"
-  }
+  "projects": {}
 }
