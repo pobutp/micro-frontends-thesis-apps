@@ -1,26 +1,26 @@
 {
   "projectType": "application",
-  "root": "apps/horizontal-shell",
-  "sourceRoot": "apps/horizontal-shell/src",
+  "root": "apps/horizontal-catalog-mfe",
+  "sourceRoot": "apps/horizontal-catalog-mfe/src",
   "prefix": "micro-frontends-thesis-apps",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/horizontal-shell",
-        "index": "apps/horizontal-shell/src/index.html",
-        "main": "apps/horizontal-shell/src/main.ts",
-        "polyfills": "apps/horizontal-shell/src/polyfills.ts",
-        "tsConfig": "apps/horizontal-shell/tsconfig.app.json",
+        "outputPath": "dist/apps/horizontal-catalog-mfe",
+        "index": "apps/horizontal-catalog-mfe/src/index.html",
+        "main": "apps/horizontal-catalog-mfe/src/main.ts",
+        "polyfills": "apps/horizontal-catalog-mfe/src/polyfills.ts",
+        "tsConfig": "apps/horizontal-catalog-mfe/tsconfig.app.json",
         "assets": [
-          "apps/horizontal-shell/src/favicon.ico",
-          "apps/horizontal-shell/src/assets"
+          "apps/horizontal-catalog-mfe/src/favicon.ico",
+          "apps/horizontal-catalog-mfe/src/assets"
         ],
-        "styles": ["apps/horizontal-shell/src/styles.css"],
+        "styles": ["apps/horizontal-catalog-mfe/src/styles.css"],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/horizontal-shell/webpack.config.js"
+          "path": "apps/horizontal-catalog-mfe/webpack.config.js"
         }
       },
       "configurations": {
@@ -39,13 +39,13 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/horizontal-shell/src/environments/environment.ts",
-              "with": "apps/horizontal-shell/src/environments/environment.prod.ts"
+              "replace": "apps/horizontal-catalog-mfe/src/environments/environment.ts",
+              "with": "apps/horizontal-catalog-mfe/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/horizontal-shell/webpack.prod.config.js"
+            "path": "apps/horizontal-catalog-mfe/webpack.prod.config.js"
           }
         },
         "development": {
@@ -63,47 +63,39 @@
       "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
-          "browserTarget": "horizontal-shell:build:production"
+          "browserTarget": "horizontal-catalog-mfe:build:production"
         },
         "development": {
-          "browserTarget": "horizontal-shell:build:development"
+          "browserTarget": "horizontal-catalog-mfe:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "publicHost": "http://localhost:4200"
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
       }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "horizontal-shell:build"
+        "browserTarget": "horizontal-catalog-mfe:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/horizontal-shell/src/**/*.ts",
-          "apps/horizontal-shell/src/**/*.html"
+          "apps/horizontal-catalog-mfe/src/**/*.ts",
+          "apps/horizontal-catalog-mfe/src/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/horizontal-shell"],
+      "outputs": ["coverage/apps/horizontal-catalog-mfe"],
       "options": {
-        "jestConfig": "apps/horizontal-shell/jest.config.js",
+        "jestConfig": "apps/horizontal-catalog-mfe/jest.config.js",
         "passWithNoTests": true
-      }
-    },
-    "serve-mfe": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "commands": [
-          "nx serve horizontal-catalog-mfe",
-          "nx serve horizontal-shell"
-        ]
       }
     }
   },

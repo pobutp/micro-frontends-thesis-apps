@@ -1,0 +1,28 @@
+{
+  "root": "apps/horizontal-catalog-mfe-e2e",
+  "sourceRoot": "apps/horizontal-catalog-mfe-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/horizontal-catalog-mfe-e2e/cypress.json",
+        "devServerTarget": "horizontal-catalog-mfe:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "horizontal-catalog-mfe:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/horizontal-catalog-mfe-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["horizontal-catalog-mfe"]
+}
