@@ -1,0 +1,73 @@
+{
+  "root": "apps/horizontal-basket-mfe",
+  "sourceRoot": "apps/horizontal-basket-mfe/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/horizontal-basket-mfe",
+        "index": "apps/horizontal-basket-mfe/src/index.html",
+        "baseHref": "/",
+        "main": "apps/horizontal-basket-mfe/src/main.tsx",
+        "polyfills": "apps/horizontal-basket-mfe/src/polyfills.ts",
+        "tsConfig": "apps/horizontal-basket-mfe/tsconfig.app.json",
+        "assets": [
+          "apps/horizontal-basket-mfe/src/favicon.ico",
+          "apps/horizontal-basket-mfe/src/assets"
+        ],
+        "styles": ["apps/horizontal-basket-mfe/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/horizontal-basket-mfe/src/environments/environment.ts",
+              "with": "apps/horizontal-basket-mfe/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "horizontal-basket-mfe:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "horizontal-basket-mfe:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/horizontal-basket-mfe/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/horizontal-basket-mfe"],
+      "options": {
+        "jestConfig": "apps/horizontal-basket-mfe/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

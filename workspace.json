@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "horizontal-basket-mfe": "apps/horizontal-basket-mfe",
+    "horizontal-basket-mfe-e2e": "apps/horizontal-basket-mfe-e2e",
     "horizontal-catalog-mfe": "apps/horizontal-catalog-mfe",
     "horizontal-catalog-mfe-e2e": "apps/horizontal-catalog-mfe-e2e",
     "horizontal-shell": "apps/horizontal-shell",
