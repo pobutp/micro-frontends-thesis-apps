@@ -46,6 +46,7 @@ module.exports = {
     new ModuleFederationPlugin({
       remotes: {
         'horizontal-catalog-mfe': 'http://localhost:4201/remoteEntry.js',
+        'horizontal-basket-mfe': 'http://localhost:4202/remoteEntry.js',
       },
       shared: share({
         '@angular/core': {

@@ -11,12 +11,19 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot(
       [
         {
-          path: 'horizontal-catalog-mfe',
+          path: '',
           loadChildren: () =>
             import('horizontal-catalog-mfe/Module').then(
               (m) => m.RemoteEntryModule
             ),
         },
+        // {
+        //   path: 'horizontal-basket-mfe',
+        //   loadChildren: () =>
+        //     import('horizontal-basket-mfe/Module').then(
+        //       (m) => m.RemoteEntryModule
+        //     ),
+        // },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

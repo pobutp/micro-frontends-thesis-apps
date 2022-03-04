@@ -101,6 +101,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
+          "nx serve horizontal-basket-mfe",
           "nx serve horizontal-catalog-mfe",
           "nx serve horizontal-shell"
         ]
