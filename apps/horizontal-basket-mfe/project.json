@@ -12,7 +12,7 @@
         "outputPath": "dist/apps/horizontal-basket-mfe",
         "index": "apps/horizontal-basket-mfe/src/index.html",
         "baseHref": "/",
-        "main": "apps/horizontal-basket-mfe/src/main.tsx",
+        "main": "apps/horizontal-basket-mfe/src/index.ts",
         "polyfills": "apps/horizontal-basket-mfe/src/polyfills.ts",
         "tsConfig": "apps/horizontal-basket-mfe/tsconfig.app.json",
         "assets": [
@@ -21,7 +21,7 @@
         ],
         "styles": ["apps/horizontal-basket-mfe/src/styles.css"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "apps/horizontal-basket-mfe/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -36,7 +36,8 @@
           "sourceMap": false,
           "namedChunks": false,
           "extractLicenses": true,
-          "vendorChunk": false
+          "vendorChunk": false,
+          "webpackConfig": "apps/horizontal-basket-mfe/webpack.prod.config.js"
         }
       }
     },
@@ -45,7 +46,7 @@
       "options": {
         "port": 4202,
         "buildTarget": "horizontal-basket-mfe:build",
-        "hmr": true
+        "hmr": false
       },
       "configurations": {
         "production": {

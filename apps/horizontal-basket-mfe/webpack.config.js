@@ -1,52 +1,52 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const nrwlConfig = require('@nrwl/react/plugins/webpack.js'); // require the main @nrwl/react/plugins/webpack configuration function.
+const deps = require('../../package.json').dependencies;
 
-module.exports = (options) => {
+module.exports = (config) => {
+  nrwlConfig(config); // first call it so that it @nrwl/react plugin adds its configs,
+
   return {
-    entry: './index.js',
+    ...config,
+    mode: 'development',
     output: {
-      filename: 'bundle.js',
-      publicPath: 'http://localhost:4202/',
-      uniqueName: 'mfe4',
+      publicPath: 'auto',
     },
-    module: {
-      rules: [
-        {
-          test: /.js$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'babel-loader',
-              options: {
-                cacheDirectory: true,
-                presets: ['@babel/react', '@babel/env'],
-              },
-            },
-          ],
-        },
-      ],
+    devServer: {
+      ...config.devServer,
+      liveReload: false,
+    },
+    optimization: {
+      minimize: false, // debug
+      runtimeChunk: 'single',
+    },
+    stats: {
+      chunks: true,
+      modules: false,
+      chunkModules: true,
+      chunkOrigins: true,
     },
     plugins: [
+      ...config.plugins,
       new ModuleFederationPlugin({
-        // For remotes (please adjust)
-        name: 'mfe4',
-        library: { type: 'var', name: 'mfe4' },
+        name: 'HorizontalBasketMfe',
         filename: 'remoteEntry.js',
         exposes: {
-          './web-components': './app.js',
+          './RemoteEntry': './src/app/components/remote-entry',
         },
-
-        shared: ['react', 'react-dom'],
+        shared: {
+          ...deps,
+          react: {
+            singleton: true,
+            eager: true,
+            requiredVersion: deps.react,
+          },
+          'react-dom': {
+            singleton: true,
+            eager: true,
+            requiredVersion: deps['react-dom'],
+          },
+        },
       }),
     ],
-    devServer: {
-      port: 4204,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods':
-          'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-        'Access-Control-Allow-Headers':
-          'X-Requested-With, content-type, Authorization',
-      },
-    },
   };
 };

@@ -12,7 +12,7 @@
         "outputPath": "dist/apps/horizontal-shell-react",
         "index": "apps/horizontal-shell-react/src/index.html",
         "baseHref": "/",
-        "main": "apps/horizontal-shell-react/src/main.tsx",
+        "main": "apps/horizontal-shell-react/src/index.ts",
         "polyfills": "apps/horizontal-shell-react/src/polyfills.ts",
         "tsConfig": "apps/horizontal-shell-react/tsconfig.app.json",
         "assets": [
@@ -21,7 +21,7 @@
         ],
         "styles": ["apps/horizontal-shell-react/src/styles.css"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "apps/horizontal-shell-react/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -44,7 +44,7 @@
       "executor": "@nrwl/web:dev-server",
       "options": {
         "buildTarget": "horizontal-shell-react:build",
-        "hmr": true
+        "hmr": false
       },
       "configurations": {
         "production": {
@@ -66,6 +66,16 @@
       "options": {
         "jestConfig": "apps/horizontal-shell-react/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "serve-mfe": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx serve horizontal-shell-react",
+          "nx serve horizontal-basket-mfe",
+          "nx serve horizontal-catalog-mfe"
+        ]
       }
     }
   },

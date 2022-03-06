@@ -32,6 +32,7 @@ module.exports = {
     publicPath: 'auto',
   },
   optimization: {
+    minimize: false,
     runtimeChunk: false,
   },
   experiments: {
@@ -44,12 +45,12 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'horizontal-catalog-mfe',
-      filename: 'remoteEntry.js',
+      name: 'HorizontalCatalogMfe',
       exposes: {
         './Module':
           'apps/horizontal-catalog-mfe/src/app/remote-entry/entry.module.ts',
       },
+      filename: 'remoteEntry.js',
       shared: share({
         '@angular/core': {
           singleton: true,
