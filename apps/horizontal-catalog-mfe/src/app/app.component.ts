@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'micro-frontends-thesis-apps-root',
+  selector: 'hc-mfe-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

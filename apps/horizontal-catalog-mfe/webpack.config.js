@@ -28,7 +28,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: 'horizontal-catalog-mfe',
+    uniqueName: 'horizontalCatalogMfe',
     publicPath: 'auto',
   },
   optimization: {
@@ -45,10 +45,9 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'HorizontalCatalogMfe',
+      name: 'horizontalCatalogMfe',
       exposes: {
-        './Module':
-          'apps/horizontal-catalog-mfe/src/app/remote-entry/entry.module.ts',
+        './web-components': 'apps/horizontal-catalog-mfe/src/bootstrap.ts',
       },
       filename: 'remoteEntry.js',
       shared: share({

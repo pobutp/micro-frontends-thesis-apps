@@ -1,2 +1,2 @@
-declare module 'horizontal-catalog-mfe/Module';
-declare module 'horizontal-basket-mfe/Module';
+declare module 'horizontalCatalogMfe/web-components';
+declare module 'horizontalBasketMfe/web-components';

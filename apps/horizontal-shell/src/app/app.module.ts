@@ -1,31 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
+import { AppComponent } from './app.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WrapperComponent, CatalogComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       [
-        {
-          path: '',
-          loadChildren: () =>
-            import('horizontal-catalog-mfe/Module').then(
-              (m) => m.RemoteEntryModule
-            ),
-        },
+        { path: 'catalog', component: CatalogComponent, pathMatch: 'full' },
+        { path: '', redirectTo: '/catalog', pathMatch: 'full' },
         // {
-        //   path: 'horizontal-basket-mfe',
-        //   loadChildren: () =>
-        //     import('horizontal-basket-mfe/Module').then(
-        //       (m) => m.RemoteEntryModule
-        //     ),
+        //   matcher: startsWith('horizontalCatalogMfe'),
+        //   component: WrapperComponent,
+        //   data: {
+        //     importName: 'horizontalCatalogMfe',
+        //     elementName: 'horizontal-catalog-mfe',
+        //   },
         // },
-      ],
-      { initialNavigation: 'enabledBlocking' }
+        // {
+        //   matcher: startsWith('horizontalBasketMfe'),
+        //   component: WrapperComponent,
+        //   data: {
+        //     importName: 'horizontalBasketMfe',
+        //     elementName: 'horizontal-basket-mfe',
+        //   },
+        // },
+      ]
+      //{ relativeLinkResolution: 'legacy' }
     ),
   ],
   providers: [],

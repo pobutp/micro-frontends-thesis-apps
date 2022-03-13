@@ -1,0 +1,11 @@
+.catalog-mfe {
+  padding: 10px;
+}
+
+.catalog-mfe__catalog {
+  background-color: red;
+}
+
+.catalog-mfe__basket {
+  background-color: blue;
+}

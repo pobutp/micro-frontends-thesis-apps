@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'micro-frontends-thesis-apps-root',
+  selector: 'hs-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'horizontal-shell';
-}
+export class AppComponent {}

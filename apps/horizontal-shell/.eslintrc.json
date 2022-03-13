@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "micro-frontends-thesis-apps",
+            "prefix": "hs",
             "style": "kebab-case"
           }
         ]

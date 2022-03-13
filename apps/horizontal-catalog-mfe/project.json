@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/horizontal-catalog-mfe",
   "sourceRoot": "apps/horizontal-catalog-mfe/src",
-  "prefix": "micro-frontends-thesis-apps",
+  "prefix": "hc-mfe",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",

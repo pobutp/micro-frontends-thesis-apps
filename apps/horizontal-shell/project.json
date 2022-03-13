@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/horizontal-shell",
   "sourceRoot": "apps/horizontal-shell/src",
-  "prefix": "micro-frontends-thesis-apps",
+  "prefix": "hs",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
