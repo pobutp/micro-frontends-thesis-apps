@@ -46,10 +46,10 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'horizontalCatalogMfe',
+      filename: 'remoteEntry.js',
       exposes: {
         './web-components': 'apps/horizontal-catalog-mfe/src/bootstrap.ts',
       },
-      filename: 'remoteEntry.js',
       shared: share({
         '@angular/core': {
           singleton: true,

@@ -9,6 +9,7 @@ module.exports = (config) => {
     ...config,
     mode: 'development',
     output: {
+      uniqueName: 'horizontalBasketMfe',
       publicPath: 'auto',
     },
     devServer: {
@@ -16,8 +17,8 @@ module.exports = (config) => {
       liveReload: false,
     },
     optimization: {
-      minimize: false, // debug
-      runtimeChunk: 'single',
+      minimize: false,
+      runtimeChunk: false,
     },
     stats: {
       chunks: true,
@@ -28,10 +29,10 @@ module.exports = (config) => {
     plugins: [
       ...config.plugins,
       new ModuleFederationPlugin({
-        name: 'HorizontalBasketMfe',
+        name: 'horizontalBasketMfe',
         filename: 'remoteEntry.js',
         exposes: {
-          './RemoteEntry': './src/app/components/remote-entry',
+          './web-components': 'apps/horizontal-basket-mfe/src/bootstrap.tsx',
         },
         shared: {
           ...deps,
