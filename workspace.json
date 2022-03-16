@@ -10,8 +10,6 @@
     "horizontal-orders-mfe": "apps/horizontal-orders-mfe",
     "horizontal-orders-mfe-e2e": "apps/horizontal-orders-mfe-e2e",
     "horizontal-shell": "apps/horizontal-shell",
-    "horizontal-shell-e2e": "apps/horizontal-shell-e2e",
-    "horizontal-shell-react": "apps/horizontal-shell-react",
-    "horizontal-shell-react-e2e": "apps/horizontal-shell-react-e2e"
+    "horizontal-shell-e2e": "apps/horizontal-shell-e2e"
   }
 }
