@@ -28,10 +28,11 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: 'horizontal-shell',
+    uniqueName: 'horizontalAccountMfe',
     publicPath: 'auto',
   },
   optimization: {
+    minimize: false,
     runtimeChunk: false,
   },
   experiments: {
@@ -44,10 +45,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {
-        // 'horizontal-catalog-mfe': 'http://localhost:4201/remoteEntry.js',
-        // 'horizontal-basket-mfe': 'http://localhost:4202/remoteEntry.js',
-        //'horizontal-account-mfe': 'http://localhost:4204/remoteEntry.js',
+      name: 'horizontalAccountMfe',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './web-components': 'apps/horizontal-account-mfe/src/bootstrap.ts',
       },
       shared: share({
         '@angular/core': {

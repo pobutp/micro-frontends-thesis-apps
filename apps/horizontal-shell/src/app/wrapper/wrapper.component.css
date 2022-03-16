@@ -1,9 +1,13 @@
+.wrapper {
+  min-height: 50vh;
+}
+
 /* Loading */
 .loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50vh;
+  height: calc(50vh - 32px);
 }
 .lds-ellipsis {
   display: inline-block;

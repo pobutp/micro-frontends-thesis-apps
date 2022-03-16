@@ -1,0 +1,28 @@
+{
+  "root": "apps/horizontal-account-mfe-e2e",
+  "sourceRoot": "apps/horizontal-account-mfe-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/horizontal-account-mfe-e2e/cypress.json",
+        "devServerTarget": "horizontal-account-mfe:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "horizontal-account-mfe:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/horizontal-account-mfe-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["horizontal-account-mfe"]
+}

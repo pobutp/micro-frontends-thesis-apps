@@ -17,20 +17,31 @@ export class WrapperComponent implements AfterContentInit {
   vc?: ElementRef;
 
   ngAfterContentInit(): void {
-    console.log(this.importName);
     const importFn = registry[this.importName];
 
     importFn()
-      .then((_: any) => console.debug(`element ${this.elementName} loaded!`))
-      // TODO If failed display error
-      .catch((err: any) =>
-        console.error(`error loading ${this.elementName}:`, err)
-      );
+      .then((_: any) => {
+        console.debug(`element ${this.elementName} loaded!`);
 
-    const element = document.createElement(this.elementName);
-    if (this.vc) {
-      this.vc.nativeElement.innerHTML = '';
-      this.vc.nativeElement.appendChild(element);
-    }
+        const element = document.createElement(this.elementName);
+
+        if (this.vc) {
+          this.vc.nativeElement.innerHTML = '';
+          this.vc.nativeElement.appendChild(element);
+        }
+      })
+      .catch((err: any) => {
+        console.error(`error loading ${this.elementName}:`, err);
+
+        if (this.vc) {
+          this.vc.nativeElement.innerHTML = `
+          <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div>
+              Failed to load ${this.elementName}
+            </div>
+          </div>
+          `;
+        }
+      });
   }
 }

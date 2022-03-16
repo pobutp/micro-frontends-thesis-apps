@@ -18,4 +18,17 @@ export const registry: Registy = {
       remoteName: 'horizontalBasketMfe',
       exposedModule: './web-components',
     }),
+  horizontalOrdersMfe: () =>
+    loadRemoteModule({
+      type: 'script',
+      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      remoteName: 'horizontalOrdersMfe',
+      exposedModule: './web-components',
+    }),
+  horizontalAccountMfe: () =>
+    loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4204/remoteEntry.js',
+      exposedModule: './web-components',
+    }),
 };
