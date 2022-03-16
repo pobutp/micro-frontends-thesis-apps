@@ -1,9 +1,56 @@
-<h1>Horizontal Shell</h1>
-<p>&nbsp;</p>
-<!-- <ul>
-    <li><img src="https://angular.io/assets/images/logos/angular/angular.svg" width="40"></li>
-    <li><a routerLink="">Home</a></li>
-    <li><a routerLink="mfe1">Catalog</a></li>
-    <li><a routerLink="mfe2">Basket</a></li>
-  </ul> -->
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <header
+    class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+  >
+    <a
+      href="/"
+      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+    >
+      <span class="fs-4">Horizontal Micro-Frontends</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a
+          routerLink="catalog-basket"
+          routerLinkActive="active"
+          class="nav-link"
+          aria-current="page"
+        >
+          Catalog-Basket
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="order-account"
+          routerLinkActive="active"
+          class="nav-link"
+        >
+          Orders-Account
+        </a>
+      </li>
+    </ul>
+  </header>
+</div>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="container-fluid">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item">
+        <a routerLink="catalog-basket" class="nav-link px-2 text-muted">
+          Catalog-Basket
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="order-account" class="nav-link px-2 text-muted">
+          Orders-Account
+        </a>
+      </li>
+    </ul>
+    <p class="text-center text-muted">© 2021 Przemysław Pobuta 152194</p>
+  </footer>
+</div>

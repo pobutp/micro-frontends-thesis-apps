@@ -6,7 +6,8 @@ import { registry } from '../registry';
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'hs-wrapper',
-  template: '<div #vc></div>',
+  templateUrl: './wrapper.component.html',
+  styleUrls: ['./wrapper.component.css'],
 })
 export class WrapperComponent implements AfterContentInit {
   @Input() elementName!: string;
@@ -21,11 +22,15 @@ export class WrapperComponent implements AfterContentInit {
 
     importFn()
       .then((_: any) => console.debug(`element ${this.elementName} loaded!`))
+      // TODO If failed display error
       .catch((err: any) =>
         console.error(`error loading ${this.elementName}:`, err)
       );
 
     const element = document.createElement(this.elementName);
-    this.vc?.nativeElement.appendChild(element);
+    if (this.vc) {
+      this.vc.nativeElement.innerHTML = '';
+      this.vc.nativeElement.appendChild(element);
+    }
   }
 }

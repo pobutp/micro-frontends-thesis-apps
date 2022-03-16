@@ -3,36 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { CatalogComponent } from './catalog/catalog.component';
+import { CatalogBasketComponent } from './catalog-basket/catalog-basket.component';
+import { OrdersAccountComponent } from './orders-account/orders-account.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 
 @NgModule({
-  declarations: [AppComponent, WrapperComponent, CatalogComponent],
+  declarations: [
+    AppComponent,
+    WrapperComponent,
+    OrdersAccountComponent,
+    CatalogBasketComponent,
+  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      [
-        { path: 'catalog', component: CatalogComponent, pathMatch: 'full' },
-        { path: '', redirectTo: '/catalog', pathMatch: 'full' },
-        // {
-        //   matcher: startsWith('horizontalCatalogMfe'),
-        //   component: WrapperComponent,
-        //   data: {
-        //     importName: 'horizontalCatalogMfe',
-        //     elementName: 'horizontal-catalog-mfe',
-        //   },
-        // },
-        // {
-        //   matcher: startsWith('horizontalBasketMfe'),
-        //   component: WrapperComponent,
-        //   data: {
-        //     importName: 'horizontalBasketMfe',
-        //     elementName: 'horizontal-basket-mfe',
-        //   },
-        // },
-      ]
-      //{ relativeLinkResolution: 'legacy' }
-    ),
+    RouterModule.forRoot([
+      {
+        path: 'catalog-basket',
+        component: CatalogBasketComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'order-account',
+        component: OrdersAccountComponent,
+        pathMatch: 'full',
+      },
+      { path: '', redirectTo: '/catalog-basket', pathMatch: 'full' },
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
