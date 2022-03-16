@@ -1,7 +1,7 @@
 export function App() {
   return (
     <>
-      <h2>Horizontal Basket MFE</h2>
+      <h2>Horizontal Orders MFE</h2>
       <div />
     </>
   );

@@ -7,6 +7,8 @@
     "horizontal-basket-mfe-e2e": "apps/horizontal-basket-mfe-e2e",
     "horizontal-catalog-mfe": "apps/horizontal-catalog-mfe",
     "horizontal-catalog-mfe-e2e": "apps/horizontal-catalog-mfe-e2e",
+    "horizontal-orders-mfe": "apps/horizontal-orders-mfe",
+    "horizontal-orders-mfe-e2e": "apps/horizontal-orders-mfe-e2e",
     "horizontal-shell": "apps/horizontal-shell",
     "horizontal-shell-e2e": "apps/horizontal-shell-e2e",
     "horizontal-shell-react": "apps/horizontal-shell-react",
