@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .wrapper {
   min-height: 50vh;
 }

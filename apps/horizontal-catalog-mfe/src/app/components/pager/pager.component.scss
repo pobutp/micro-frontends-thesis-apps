@@ -1,0 +1,30 @@
+.hc-pager {
+  $font-size-s: 0.8em;
+  .hc-container {
+    padding: 0;
+  }
+
+  &-wrapper {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  &-item {
+    font-size: $font-size-s;
+    margin: 0 5vw;
+
+    &.is-disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &--navigable {
+      cursor: pointer;
+      display: inline-block;
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}

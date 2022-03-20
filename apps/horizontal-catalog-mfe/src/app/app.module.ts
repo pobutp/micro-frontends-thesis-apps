@@ -9,9 +9,10 @@ import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { PagerComponent } from './components/pager/pager.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PagerComponent],
   imports: [
     HttpClientModule,
     BrowserModule,

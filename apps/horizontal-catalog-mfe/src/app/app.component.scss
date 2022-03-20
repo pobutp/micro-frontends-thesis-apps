@@ -1,10 +1,31 @@
 @import '../styles';
 
-.hc-container {
-  padding: 0;
+.hc-catalog-filters {
+  .hc-catalog-filters-wrapper {
+    margin-bottom: 1em;
+
+    .hc-catalog-filter-wrapper {
+      width: 200px;
+      margin-right: 0.5em;
+
+      .hc-catalog-label {
+      }
+      .hc-catalog-filter {
+      }
+    }
+  }
 }
 
-.hc-catalog-items {
+.hc-catalog-item {
+  cursor: pointer;
+
+  &.is-disabled {
+    cursor: auto;
+
+    .hc-catalog-icon-svg {
+      opacity: 0.2;
+    }
+  }
 }
 
 .hc-catalog-thumbnail-wrapper {
