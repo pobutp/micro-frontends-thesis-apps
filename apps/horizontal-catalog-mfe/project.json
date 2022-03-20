@@ -13,11 +13,8 @@
         "main": "apps/horizontal-catalog-mfe/src/main.ts",
         "polyfills": "apps/horizontal-catalog-mfe/src/polyfills.ts",
         "tsConfig": "apps/horizontal-catalog-mfe/tsconfig.app.json",
-        "assets": [
-          "apps/horizontal-catalog-mfe/src/favicon.ico",
-          "apps/horizontal-catalog-mfe/src/assets"
-        ],
-        "styles": ["apps/horizontal-catalog-mfe/src/styles.css"],
+        "assets": ["apps/horizontal-catalog-mfe/src/favicon.ico", "apps/horizontal-catalog-mfe/src/assets"],
+        "styles": ["apps/horizontal-catalog-mfe/src/styles.scss"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/horizontal-catalog-mfe/webpack.config.js"
@@ -84,10 +81,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/horizontal-catalog-mfe/src/**/*.ts",
-          "apps/horizontal-catalog-mfe/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/horizontal-catalog-mfe/src/**/*.ts", "apps/horizontal-catalog-mfe/src/**/*.html"]
       }
     },
     "test": {

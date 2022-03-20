@@ -14,7 +14,7 @@ import { SecurityService } from './services/security.service';
 @Component({
   selector: 'hc-mfe-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   brands: ICatalogBrand[] | undefined;

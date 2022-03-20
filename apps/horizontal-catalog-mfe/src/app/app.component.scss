@@ -1,0 +1,33 @@
+@import '../styles';
+
+.hc-container {
+  padding: 0;
+}
+
+.hc-catalog-items {
+}
+
+.hc-catalog-thumbnail-wrapper {
+  width: 100%;
+  .hc-catalog-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.hc-catalog-details {
+  padding: 7px 15px;
+
+  .hc-catalog-name {
+  }
+  .hc-catalog-price {
+  }
+}
+
+.hc-catalog-icon {
+  .hc-catalog-icon-svg {
+    padding: 5px 0 10px 0;
+    height: 36px;
+    width: 36px;
+  }
+}
