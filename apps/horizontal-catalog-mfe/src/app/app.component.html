@@ -1,12 +1,12 @@
 <!-- <router-outlet></router-outlet> -->
 
 <section class="hc-catalog-filters">
-  <div class="container">
+  <div class="container mt-3">
     <div *ngIf="errorReceived" class="alert alert-warning esh-catalog-alert" role="alert">
       Error requesting catalog products, please try later on
     </div>
 
-    <div class="hc-catalog-filters-wrapper d-flex align-items-end mt-3">
+    <div class="hc-catalog-filters-wrapper d-flex align-items-end">
       <div class="hc-catalog-filter-wrapper">
         <label class="hc-catalog-label" for="brand">Brand</label>
         <select class="hc-catalog-filter form-control" id="brand" (change)="onBrandFilterChanged($event)">

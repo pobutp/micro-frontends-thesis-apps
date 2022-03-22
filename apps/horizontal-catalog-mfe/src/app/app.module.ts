@@ -14,8 +14,8 @@ import { PagerComponent } from './components/pager/pager.component';
 @NgModule({
   declarations: [AppComponent, PagerComponent],
   imports: [
-    HttpClientModule,
     BrowserModule,
+    HttpClientModule,
     // TODO Fix routing in MFE
     //RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
   ],

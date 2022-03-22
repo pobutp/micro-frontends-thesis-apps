@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/horizontal-account-mfe",
   "sourceRoot": "apps/horizontal-account-mfe/src",
-  "prefix": "micro-frontends-thesis-apps",
+  "prefix": "ha-mfe",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
@@ -13,10 +13,7 @@
         "main": "apps/horizontal-account-mfe/src/main.ts",
         "polyfills": "apps/horizontal-account-mfe/src/polyfills.ts",
         "tsConfig": "apps/horizontal-account-mfe/tsconfig.app.json",
-        "assets": [
-          "apps/horizontal-account-mfe/src/favicon.ico",
-          "apps/horizontal-account-mfe/src/assets"
-        ],
+        "assets": ["apps/horizontal-account-mfe/src/favicon.ico", "apps/horizontal-account-mfe/src/assets"],
         "styles": ["apps/horizontal-account-mfe/src/styles.css"],
         "scripts": [],
         "customWebpackConfig": {
@@ -84,10 +81,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/horizontal-account-mfe/src/**/*.ts",
-          "apps/horizontal-account-mfe/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/horizontal-account-mfe/src/**/*.ts", "apps/horizontal-account-mfe/src/**/*.html"]
       }
     },
     "test": {

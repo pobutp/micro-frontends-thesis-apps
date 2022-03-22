@@ -5,6 +5,7 @@ import { Observable, Subject } from 'rxjs';
 import { ConfigurationService } from './configuration.service';
 import { StorageService } from './storage.service';
 
+// TODO Adjust to shell
 @Injectable({
   providedIn: 'root',
 })
@@ -30,17 +31,17 @@ export class SecurityService {
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
     this.storage = _storageService;
-
-    this._configurationService.settingsLoaded$.subscribe((x) => {
-      this.authorityUrl = this._configurationService.serverSettings?.identityUrl ?? '';
-      this.storage.store('IdentityUrl', this.authorityUrl);
-    });
+    this.authorityUrl = this._configurationService.serverSettings?.identityUrl ?? '';
 
     if (this.storage.retrieve('isAuthorized') !== '') {
       this.isAuthorized = this.storage.retrieve('isAuthorized');
       this.authenticationSource.next(true);
       this.UserData = this.storage.retrieve('userData');
     }
+  }
+
+  public initConfig(): void {
+    this.authorityUrl = this._configurationService.serverSettings?.identityUrl ?? '';
   }
 
   public GetToken(): any {
@@ -84,7 +85,7 @@ export class SecurityService {
     this.ResetAuthorizationData();
 
     const authorizationUrl = this.authorityUrl + '/connect/authorize';
-    const client_id = 'js';
+    const client_id = 'js-mfe';
     const redirect_uri = location.origin + '/';
     const response_type = 'id_token token';
     const scope = 'openid profile orders basket webshoppingagg orders.signalrhub';
@@ -241,7 +242,7 @@ export class SecurityService {
 
   private getUserData = (): Observable<string[]> => {
     if (this.authorityUrl === '') {
-      this.authorityUrl = this.storage.retrieve('IdentityUrl');
+      this.authorityUrl = this.storage.retrieve('identityUrl');
     }
 
     const options = this.setHeaders();

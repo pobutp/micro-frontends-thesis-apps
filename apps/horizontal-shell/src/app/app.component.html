@@ -1,35 +1,23 @@
 <div class="container-fluid">
-  <header
-    class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
-  >
-    <a
-      href="/"
-      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
-    >
-      <span class="fs-4">Horizontal Micro-Frontends</span>
+  <header class="d-flex flex-wrap justify-content-center align-items-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <div class="me-3">
+        <img class="hs-logo" src="assets/icons/distribute-horizontal.svg" />
+      </div>
+      <div class="fs-4"><strong>Horizontal</strong> Micro-Frontends eShop</div>
     </a>
 
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a
-          routerLink="catalog-basket"
-          routerLinkActive="active"
-          class="nav-link"
-          aria-current="page"
-        >
-          Catalog-Basket
-        </a>
+        <a routerLink="catalog-basket" routerLinkActive="active" class="nav-link mb-0" aria-current="page">Catalog</a>
       </li>
       <li class="nav-item">
-        <a
-          routerLink="order-account"
-          routerLinkActive="active"
-          class="nav-link"
-        >
-          Orders-Account
-        </a>
+        <a routerLink="order-account" routerLinkActive="active" class="nav-link mb-0">Account</a>
       </li>
     </ul>
+    <div class="border-start ms-2 me-2">
+      <hs-identity></hs-identity>
+    </div>
   </header>
 </div>
 
@@ -41,14 +29,10 @@
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item">
-        <a routerLink="catalog-basket" class="nav-link px-2 text-muted">
-          Catalog-Basket
-        </a>
+        <a routerLink="catalog-basket" class="nav-link px-2 text-muted"> Catalog-Basket </a>
       </li>
       <li class="nav-item">
-        <a routerLink="order-account" class="nav-link px-2 text-muted">
-          Orders-Account
-        </a>
+        <a routerLink="order-account" class="nav-link px-2 text-muted"> Orders-Account </a>
       </li>
     </ul>
     <p class="text-center text-muted">© 2021 Przemysław Pobuta 152194</p>

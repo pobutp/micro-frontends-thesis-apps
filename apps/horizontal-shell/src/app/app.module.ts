@@ -1,22 +1,20 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CatalogBasketComponent } from './catalog-basket/catalog-basket.component';
+import { IdentityComponent } from './components/identity/identity.component';
 import { OrdersAccountComponent } from './orders-account/orders-account.component';
 import { startsWith } from './router.utils';
 import { WrapperComponent } from './wrapper/wrapper.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WrapperComponent,
-    OrdersAccountComponent,
-    CatalogBasketComponent,
-  ],
+  declarations: [AppComponent, WrapperComponent, OrdersAccountComponent, CatalogBasketComponent, IdentityComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {

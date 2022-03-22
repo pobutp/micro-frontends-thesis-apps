@@ -1,3 +1,7 @@
-<h2>Horizontal Account MFE</h2>
+<h2>Account</h2>
 
-<!-- <router-outlet></router-outlet> -->
+<div *ngIf="authenticated; else notAuthenticatedTemplate">
+  <ha-mfe-account-details-form [userData]="userData"></ha-mfe-account-details-form>
+</div>
+
+<ng-template #notAuthenticatedTemplate>Not authenticated!</ng-template>

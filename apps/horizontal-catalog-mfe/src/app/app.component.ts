@@ -33,11 +33,11 @@ export class AppComponent implements OnInit {
     private configurationService: ConfigurationService,
     private securityService: SecurityService
   ) {
-    this.authenticated = !!securityService.IsAuthorized;
+    this.authenticated = !!securityService.isAuthorized;
   }
 
   ngOnInit() {
-    this.configurationService.load();
+    this.configurationService.init();
 
     // Configuration Settings:
     if (this.configurationService.isReady) this.loadData();
@@ -47,10 +47,9 @@ export class AppComponent implements OnInit {
       });
 
     // Subscribe to login and logout observable
-    this.authSubscription =
-      this.securityService.authenticationChallenge$.subscribe((res) => {
-        this.authenticated = res;
-      });
+    this.authSubscription = this.securityService.authenticationChallenge$.subscribe((res) => {
+      this.authenticated = res;
+    });
   }
 
   loadData() {
@@ -63,24 +62,13 @@ export class AppComponent implements OnInit {
     event.preventDefault();
 
     if (this.brandSelected) {
-      this.brandSelected =
-        this.brandSelected && this.brandSelected.toString() != 'null'
-          ? this.brandSelected
-          : null;
+      this.brandSelected = this.brandSelected && this.brandSelected.toString() != 'null' ? this.brandSelected : null;
     }
-    this.typeSelected =
-      this.typeSelected && this.typeSelected.toString() != 'null'
-        ? this.typeSelected
-        : null;
+    this.typeSelected = this.typeSelected && this.typeSelected.toString() != 'null' ? this.typeSelected : null;
 
     if (this.paginationInfo) {
       this.paginationInfo.actualPage = 0;
-      this.getCatalog(
-        this.paginationInfo.itemsPage,
-        this.paginationInfo.actualPage,
-        this.brandSelected,
-        this.typeSelected
-      );
+      this.getCatalog(this.paginationInfo.itemsPage, this.paginationInfo.actualPage, this.brandSelected, this.typeSelected);
     }
   }
 
@@ -112,12 +100,7 @@ export class AppComponent implements OnInit {
     this.basketService.addItemToBasket(item);
   }
 
-  getCatalog(
-    pageSize: number,
-    pageIndex: number,
-    brand?: number,
-    type?: number
-  ) {
+  getCatalog(pageSize: number, pageIndex: number, brand?: number, type?: number) {
     this.errorReceived = false;
     this.service
       .getCatalog(pageIndex, pageSize, brand, type)
