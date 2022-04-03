@@ -5,7 +5,7 @@ import { AutorizationService } from './services/autorization.service';
 @Component({
   selector: 'ha-mfe-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   public authenticated = false;
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('[Account] Checking authorized' + this.autorizationService.isAuthorized);
+    console.log('[Account] Checking authorized ' + this.autorizationService.isAuthorized);
     this.authenticated = !!this.autorizationService.isAuthorized;
 
     if (this.authenticated) {
