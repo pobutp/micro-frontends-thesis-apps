@@ -1,8 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Guid } from '@micro-frontends-thesis-apps/shared';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, Observable, throwError } from 'rxjs';
 
 import { SecurityService } from './security.service';
 
@@ -16,7 +15,10 @@ export class DataService {
     const options = {};
     this.setHeaders(options);
 
-    return this.http.get<Response>(url, options).pipe(catchError(this.handleError));
+    return this.http.get<Response>(url, options).pipe(
+      // retry(3), // retry a failed request up to 3 times
+      catchError(this.handleError)
+    );
   }
 
   postWithId(url: string, data: any, params?: any): Observable<Response> {
@@ -73,10 +75,10 @@ export class DataService {
   private setHeaders(options: any, needId?: boolean) {
     if (needId && this.securityService) {
       options['headers'] = new HttpHeaders()
-        .append('authorization', 'Bearer ' + this.securityService.GetToken())
+        .append('authorization', 'Bearer ' + this.securityService.getToken())
         .append('x-requestid', Guid.newGuid());
     } else if (this.securityService) {
-      options['headers'] = new HttpHeaders().append('authorization', 'Bearer ' + this.securityService.GetToken());
+      options['headers'] = new HttpHeaders().append('authorization', 'Bearer ' + this.securityService.getToken());
     }
   }
 }
