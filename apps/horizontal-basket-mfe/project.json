@@ -1,0 +1,98 @@
+{
+  "projectType": "application",
+  "root": "apps/horizontal-basket-mfe",
+  "sourceRoot": "apps/horizontal-basket-mfe/src",
+  "prefix": "micro-frontends-thesis-apps",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/horizontal-basket-mfe",
+        "index": "apps/horizontal-basket-mfe/src/index.html",
+        "main": "apps/horizontal-basket-mfe/src/main.ts",
+        "polyfills": "apps/horizontal-basket-mfe/src/polyfills.ts",
+        "tsConfig": "apps/horizontal-basket-mfe/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/horizontal-basket-mfe/src/favicon.ico", "apps/horizontal-basket-mfe/src/assets"],
+        "styles": ["apps/horizontal-basket-mfe/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/horizontal-basket-mfe/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/horizontal-basket-mfe/src/environments/environment.ts",
+              "with": "apps/horizontal-basket-mfe/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/horizontal-basket-mfe/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "horizontal-basket-mfe:build:production"
+        },
+        "development": {
+          "browserTarget": "horizontal-basket-mfe:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4202,
+        "publicHost": "http://localhost:4202"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "horizontal-basket-mfe:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/horizontal-basket-mfe/src/**/*.ts", "apps/horizontal-basket-mfe/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/horizontal-basket-mfe"],
+      "options": {
+        "jestConfig": "apps/horizontal-basket-mfe/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
