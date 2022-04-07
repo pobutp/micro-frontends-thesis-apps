@@ -17,12 +17,12 @@ export const registry: Registy = {
       remoteEntry: 'http://localhost:4202/remoteEntry.js',
       exposedModule: './web-components',
     }),
-  // horizontalOrdersMfe: () =>
-  //   loadRemoteModule({
-  //     type: 'module',
-  //     remoteEntry: 'http://localhost:4203/remoteEntry.js',
-  //     exposedModule: './web-components',
-  //   }),
+  horizontalOrdersMfe: () =>
+    loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      exposedModule: './web-components',
+    }),
   horizontalAccountMfe: () =>
     loadRemoteModule({
       type: 'module',

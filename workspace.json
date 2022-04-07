@@ -4,6 +4,7 @@
     "horizontal-account-mfe": "apps/horizontal-account-mfe",
     "horizontal-basket-mfe": "apps/horizontal-basket-mfe",
     "horizontal-catalog-mfe": "apps/horizontal-catalog-mfe",
+    "horizontal-orders-mfe": "apps/horizontal-orders-mfe",
     "horizontal-shell": "apps/horizontal-shell",
     "shared": "libs/shared"
   }

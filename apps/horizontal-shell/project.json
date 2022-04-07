@@ -106,6 +106,7 @@
           "nx serve horizontal-shell",
           "nx serve horizontal-catalog-mfe",
           "nx serve horizontal-basket-mfe",
+          "nx serve horizontal-orders-mfe",
           "nx serve horizontal-account-mfe"
         ]
       }

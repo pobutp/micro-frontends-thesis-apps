@@ -26,7 +26,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: 'horizontal-shell',
+    uniqueName: 'horizontalOrdersMfe',
     publicPath: 'auto',
   },
   optimization: {
@@ -42,43 +42,17 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {
-        //'horizontal-catalog-mfe': 'http://localhost:4201/remoteEntry.js',
-        //'horizontal-basket-mfe':  'http://localhost:4202/remoteEntry.js',
-        //'horizontal-orders-mfe':  'http://localhost:4203/remoteEntry.js',
-        //'horizontal-account-mfe': 'http://localhost:4204/remoteEntry.js',
+      name: 'horizontalOrdersMfe',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './web-components': 'apps/horizontal-orders-mfe/src/bootstrap.ts',
       },
       shared: share({
-        '@angular/core': {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: 'auto',
-          includeSecondaries: true,
-        },
-        '@angular/common': {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: 'auto',
-          includeSecondaries: true,
-        },
-        '@angular/common/http': {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: 'auto',
-          includeSecondaries: true,
-        },
-        '@angular/router': {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: 'auto',
-          includeSecondaries: true,
-        },
-        rxjs: {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: 'auto',
-          includeSecondaries: true,
-        },
+        '@angular/core': { singleton: true, strictVersion: true, requiredVersion: 'auto', includeSecondaries: true },
+        '@angular/common': { singleton: true, strictVersion: true, requiredVersion: 'auto', includeSecondaries: true },
+        '@angular/common/http': { singleton: true, strictVersion: true, requiredVersion: 'auto', includeSecondaries: true },
+        '@angular/router': { singleton: true, strictVersion: true, requiredVersion: 'auto', includeSecondaries: true },
+        rxjs: { singleton: true, strictVersion: true, requiredVersion: 'auto', includeSecondaries: true },
         ...sharedMappings.getDescriptors(),
       }),
       library: {
