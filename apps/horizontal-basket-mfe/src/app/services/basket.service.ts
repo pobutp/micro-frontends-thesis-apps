@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { IBasket } from '@micro-frontends-thesis-apps/shared';
 import { Observable, Subject, tap } from 'rxjs';
 
 import { IBasketCheckout } from '../models/basket-checkout.model';
-import { IBasket } from '../models/basket.model';
 import { IOrder } from '../models/order.model';
 import { ConfigurationService } from './configuration.service';
 import { DataService } from './data.service';

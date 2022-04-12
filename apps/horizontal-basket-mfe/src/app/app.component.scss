@@ -10,10 +10,17 @@
 .hb-basket-items {
 }
 
-.esh-basket-item {
+.hb-basket-item {
+  padding-bottom: 1rem;
 }
 
 .hb-basket-thumbnail-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .hb-basket-thumbnail {
+    width: 150px;
+  }
 }
 
 .hb-basket-delete {
@@ -22,10 +29,8 @@
 .hb-basket-delete-svg {
 }
 
-.hb-basket-thumbnail {
-}
-
 .hb-basket-title {
+  padding: 0.5rem 0;
 }
 
 .hb-basket-description {

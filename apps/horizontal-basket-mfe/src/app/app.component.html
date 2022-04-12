@@ -6,6 +6,7 @@
       </div>
     </div>
 
+    <!-- TODO Show only for logged in -->
     <div class="row">
       <div class="col-12">
         <h2 class="hb-basket-title">Your shopping bag</h2>
@@ -15,12 +16,12 @@
           <div *ngFor="let item of basket?.items" class="col-12">
             <article class="hb-basket-item">
               <div class="hb-basket-thumbnail-wrapper">
+                <img class="hb-basket-thumbnail" src="{{ item.pictureUrl }}" alt="Product Name" />
                 <div (click)="deleteItem(item.id)" class="hb-basket-delete">
                   <button type="button" class="btn btn-outline-secondary">
-                    <img class="hb-basket-delete-svg" src="assets/icons/bag-dash.svg" alt="Delete" />
+                    <img class="hb-basket-delete-svg" src="assets/icons/trash.svg" alt="Delete" />
                   </button>
                 </div>
-                <img class="hb-basket-thumbnail" src="{{ item.pictureUrl }}" alt="Product Name" />
               </div>
               <div class="hb-basket-title">
                 {{ item.productName }}
@@ -33,6 +34,7 @@
                   <div class="btn-group">
                     <button
                       [ngClass]="{ 'hb-basket-button': true, 'is-disabled': item.quantity === 1 }"
+                      [disabled]="item.quantity === 1"
                       (click)="itemQuantityChanged(item, item.quantity - 1)"
                       type="button"
                       class="hb-basket-button btn btn-outline-secondary"
@@ -42,15 +44,14 @@
                     <button type="button" class="hb-basket-quantity btn btn-outline-secondary" disabled>
                       {{ item.quantity }}
                     </button>
-                    <button type="button" class="hb-basket-button btn btn-outline-secondary">
-                      <img class="hb-basket-button-svg" src="assets/icons/plus.svg" alt="Less" />
+                    <button
+                      (click)="itemQuantityChanged(item, item.quantity + 1)"
+                      class="hb-basket-button btn btn-outline-secondary"
+                      type="button"
+                    >
+                      <img class="hb-basket-button-svg" src="assets/icons/plus.svg" alt="More" />
                     </button>
                   </div>
-                  <button></button>
-                  (click)="itemQuantityChanged(item, item.quantity+1)"
-                  <button class="hb-basket-button">
-                    <img class="hb-basket-button-svg" src="assets/icons/plus.svg" alt="More" />
-                  </button>
                 </div>
                 <div class="hb-basket-price">
                   {{ item.unitPrice * item.quantity | number: '.2-2' }}
