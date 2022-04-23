@@ -7,6 +7,14 @@
 .hb-basket-title {
 }
 
+.hb-empty-basket {
+  margin: 7vh 5vw;
+  .hb-basket-basket-svg {
+    width: 100%;
+    opacity: 0.05;
+  }
+}
+
 .hb-basket-items {
 }
 

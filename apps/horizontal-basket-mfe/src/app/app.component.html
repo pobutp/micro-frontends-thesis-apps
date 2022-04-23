@@ -63,6 +63,11 @@
               </div>
             </article>
           </div>
+          <div class="col-12" *ngIf="!basket?.items || basket?.items?.length === 0">
+            <div class="hb-empty-basket">
+              <img class="hb-basket-basket-svg" src="assets/icons/cart3.svg" alt="Basket" />
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-12">
@@ -75,9 +80,11 @@
           </div>
         </div>
 
-        <div class="divider u-background-brightest bt-4">
+        <div class="divider u-background-brightest bt-4 mt-3">
           <div>
-            <button class="btn btn-primary w-100" (click)="checkOut($event)">Checkout</button>
+            <button [disabled]="!(isAuthorized && basket?.items?.length)" class="btn btn-primary w-100" (click)="checkOut($event)">
+              Checkout
+            </button>
           </div>
         </div>
       </div>

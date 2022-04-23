@@ -3,6 +3,7 @@ import { CatalogMfeEvents, EventDispatcherService, IBasket, IBasketItem } from '
 import { Observable } from 'rxjs';
 
 import { BasketService } from './services/basket.service';
+import { SecurityService } from './services/security.service';
 
 @Component({
   selector: 'micro-frontends-thesis-apps-root',
@@ -13,8 +14,13 @@ export class AppComponent implements OnInit {
   errorMessages: any;
   basket: IBasket | undefined;
   totalPrice = 0;
+  isAuthorized = this.authService.isAuthorized;
 
-  constructor(private basketService: BasketService, private readonly eventDispatcherService: EventDispatcherService) {}
+  constructor(
+    private readonly authService: SecurityService,
+    private readonly basketService: BasketService,
+    private readonly eventDispatcherService: EventDispatcherService
+  ) {}
   //private router: Router
 
   ngOnInit() {
