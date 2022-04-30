@@ -20,12 +20,10 @@ import { WrapperComponent } from './wrapper/wrapper.component';
         {
           matcher: startsWith('catalog-basket'),
           component: CatalogBasketComponent,
-          pathMatch: 'full',
         },
         {
           matcher: startsWith('order-account'),
           component: OrdersAccountComponent,
-          pathMatch: 'full',
         },
         { path: '', redirectTo: '/catalog-basket', pathMatch: 'full' },
       ],

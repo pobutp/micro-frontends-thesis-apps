@@ -5,3 +5,4 @@ export * from './lib/models/basket.model';
 export * from './lib/utils/guid';
 export * from './lib/constants/event-dispatcher.constants';
 export * from './lib/services/event-dispatcher.service';
+export * from './lib/utils/routing.util';
