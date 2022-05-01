@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SecurityService } from '@micro-frontends-thesis-apps/shared';
 import { catchError, Subscription, throwError } from 'rxjs';
 
 import { ICatalogBrand } from './models/catalog-brand.model';
@@ -9,7 +10,6 @@ import { IPager } from './models/pager.model';
 import { BasketWrapperService } from './services/basket-wrapper.service';
 import { CatalogService } from './services/catalog.service';
 import { ConfigurationService } from './services/configuration.service';
-import { SecurityService } from './services/security.service';
 
 @Component({
   selector: 'hc-mfe-root',

@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
-import { CatalogMfeEvents, EventDispatcherService, Guid, IBasketItem } from '@micro-frontends-thesis-apps/shared';
+import {
+  CatalogMfeEvents,
+  EventDispatcherService,
+  Guid,
+  IBasketItem,
+  SecurityService,
+} from '@micro-frontends-thesis-apps/shared';
 
 import { ICatalogItem } from '../models/catalog-item.model';
-import { SecurityService } from './security.service';
 
 @Injectable({
   providedIn: 'root',

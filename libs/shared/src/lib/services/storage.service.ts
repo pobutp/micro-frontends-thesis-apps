@@ -21,7 +21,7 @@ export class StorageService {
     return;
   }
 
-  public store(key: string, value: Storage) {
+  public store(key: string, value: any) {
     this.storage.setItem(key, JSON.stringify(value));
   }
 }

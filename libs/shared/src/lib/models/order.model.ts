@@ -16,6 +16,7 @@ export interface IOrder {
   ordernumber: string;
   total: number;
   orderItems: IOrderItem[];
-}
 
-// TODO Move to shared?
+  date: string;
+  status: string;
+}
