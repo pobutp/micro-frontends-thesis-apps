@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import { AfterContentInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
-import { registry } from '../registry';
+import { registry } from '../../registry';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector

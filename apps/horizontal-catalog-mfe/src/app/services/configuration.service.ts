@@ -1,9 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IConfiguration } from '@micro-frontends-thesis-apps/shared';
+import { IConfiguration, StorageService } from '@micro-frontends-thesis-apps/shared';
 import { Subject } from 'rxjs';
-
-import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +11,7 @@ export class ConfigurationService {
   settingsLoaded$ = this.settingsLoadedSource.asObservable();
   isReady = false;
 
-  constructor(private storageService: StorageService) {}
+  constructor(private readonly storageService: StorageService) {}
 
   init(): void {
     this.serverSettings = {} as IConfiguration;

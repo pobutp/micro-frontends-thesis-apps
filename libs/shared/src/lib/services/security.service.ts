@@ -16,16 +16,11 @@ export class SecurityService {
   private headers: HttpHeaders;
   private storage: StorageService;
   private authenticationSource = new Subject<boolean>();
-  authenticationChallenge$ = this.authenticationSource.asObservable();
   private authorityUrl = '';
 
-  constructor(
-    private _http: HttpClient,
-    // private _router: Router,
-    // private route: ActivatedRoute,
-    private _configurationService: ConfigurationService,
-    private _storageService: StorageService
-  ) {
+  authenticationChallenge$ = this.authenticationSource.asObservable();
+
+  constructor(private _http: HttpClient, private _configurationService: ConfigurationService, private _storageService: StorageService) {
     this.headers = new HttpHeaders();
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
@@ -80,7 +75,7 @@ export class SecurityService {
     );
   }
 
-  public Authorize() {
+  public authorize() {
     this.ResetAuthorizationData();
 
     const authorizationUrl = this.authorityUrl + '/connect/authorize';

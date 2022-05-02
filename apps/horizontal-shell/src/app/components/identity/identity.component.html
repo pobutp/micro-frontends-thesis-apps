@@ -1,10 +1,10 @@
 <ul class="nav nav-pills">
   <ng-container *ngIf="authenticated; else notAuthenticatedTemplate">
-    <li class="nav-item disabled">
-      <a [routerLink]="" class="nav-link mb-0">{{ userName }}</a>
-    </li>
     <li class="nav-item">
       <a [routerLink]="" class="nav-link mb-0" (click)="logoutClicked($event)">Log out</a>
+    </li>
+    <li class="nav-item disabled">
+      <a class="nav-link mb-0 hs-user-name">{{ userName }}</a>
     </li>
   </ng-container>
   <ng-template #notAuthenticatedTemplate>
@@ -13,27 +13,3 @@
     </li>
   </ng-template>
 </ul>
-
-<!-- <div class="esh-identity">
-  <section class="esh-identity-section" *ngIf="!authenticated">
-    <div class="u-cursor-pointer" (click)="login()">
-      <div class="esh-identity-name d-flex align-items-center">
-        <button type="button" class="btn btn-primary">
-          LOGIN
-          <img class="esh-identity-image ms-2" src="assets/icons/box-arrow-in-right.svg" />
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="esh-identity-section u-cursor-pointer" *ngIf="authenticated">
-    <div class="esh-identity-name">{{ userName }}</div>
-    <img class="esh-identity-image ms-2" src="assets/icons/person-circle.svg" />
-  </section>
-
-  <section class="esh-identity-drop" *ngIf="authenticated">
-    <div class="esh-identity-item" (click)="logoutClicked($event)">
-      <div class="esh-identity-name">Log Out</div>
-    </div>
-  </section>
-</div> -->

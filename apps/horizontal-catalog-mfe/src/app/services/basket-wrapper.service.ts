@@ -27,10 +27,9 @@ export class BasketWrapperService {
         oldUnitPrice: 0,
       };
 
-      //this.addItemToBasketSource.next(basketItem);
       this.eventDispatcherService.dispatchEvent(CatalogMfeEvents.ADD_PRODUCT_TO_BASKET, { detail: basketItem });
     } else {
-      this.securityService.Authorize();
+      this.securityService.authorize();
     }
   }
 }

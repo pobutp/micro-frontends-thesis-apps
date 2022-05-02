@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
-import { IBasket } from '@micro-frontends-thesis-apps/shared';
+import { ConfigurationService, DataService, IBasket } from '@micro-frontends-thesis-apps/shared';
 import { Observable, Subject, tap } from 'rxjs';
 
-import { ConfigurationService } from './configuration.service';
-import { DataService } from './data.service';
 import { SecurityService } from './security.service';
-import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -24,12 +21,9 @@ export class BasketService {
   basketUpdate$ = this.basketUpdateSource.asObservable();
 
   constructor(
-    private service: DataService,
-    private authService: SecurityService,
-    //private basketWrapperService: BasketWrapperService, -> event emitted from pub/sub in shell
-    //private router: Router,
-    private configurationService: ConfigurationService,
-    private storageService: StorageService
+    private readonly service: DataService,
+    private readonly authService: SecurityService,
+    private readonly configurationService: ConfigurationService
   ) {
     this.basket.items = [];
 
@@ -50,10 +44,6 @@ export class BasketService {
         }
       }
     }
-
-    // this.basketWrapperService.orderCreated$.subscribe((x) => {
-    //   this.dropBasket();
-    // });
   }
 
   addItemToBasket(item: any): Observable<boolean> {

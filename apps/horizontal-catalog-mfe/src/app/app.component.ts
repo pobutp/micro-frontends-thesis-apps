@@ -86,7 +86,6 @@ export class AppComponent implements OnInit {
 
   onPageChanged(value: any) {
     console.log('catalog pager event fired' + value);
-    //event.preventDefault();
     if (this.paginationInfo) {
       this.paginationInfo.actualPage = value;
       this.getCatalog(this.paginationInfo.itemsPage, value);

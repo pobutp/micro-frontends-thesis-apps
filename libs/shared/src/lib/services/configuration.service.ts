@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IConfiguration } from '@micro-frontends-thesis-apps/shared';
 import { Subject } from 'rxjs';
 
+import { IConfiguration } from '../models/configuration.model';
 import { StorageService } from './storage.service';
 
 @Injectable({

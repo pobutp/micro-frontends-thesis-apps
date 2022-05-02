@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Guid } from '@micro-frontends-thesis-apps/shared';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+import { Guid } from '../utils/guid';
 import { SecurityService } from './security.service';
 
 @Injectable({

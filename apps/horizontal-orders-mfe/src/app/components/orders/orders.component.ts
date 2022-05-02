@@ -5,7 +5,7 @@ import { catchError, throwError } from 'rxjs';
 import { OrdersService } from '../../services/orders.service';
 
 @Component({
-  selector: 'micro-frontends-thesis-apps-orders',
+  selector: 'ho-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.scss'],
 })
