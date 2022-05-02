@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ha-mfe-account-details-form',
+  selector: 'ha-account-details-form',
   templateUrl: './account-details-form.component.html',
   styleUrls: ['./account-details-form.component.scss'],
 })

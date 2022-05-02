@@ -12,7 +12,7 @@ import { CatalogService } from './services/catalog.service';
 import { ConfigurationService } from './services/configuration.service';
 
 @Component({
-  selector: 'hc-mfe-root',
+  selector: 'hc-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

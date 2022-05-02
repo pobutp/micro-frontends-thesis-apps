@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/horizontal-basket-mfe",
   "sourceRoot": "apps/horizontal-basket-mfe/src",
-  "prefix": "micro-frontends-thesis-apps",
+  "prefix": "hb",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",

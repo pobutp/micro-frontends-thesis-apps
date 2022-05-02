@@ -7,15 +7,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { DoBootstrap, Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { BasketContainerComponent } from './components/basket-container/basket-container.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BasketContainerComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
-    //RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' })
+    RouterModule.forRoot([
+      {
+        path: 'catalog-basket',
+        component: BasketContainerComponent,
+      },
+      {
+        path: '**',
+        redirectTo: '/catalog-basket',
+        pathMatch: 'full',
+      },
+    ]),
   ],
   providers: [],
   bootstrap: [],

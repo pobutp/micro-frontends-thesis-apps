@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IBasket, IOrder } from '@micro-frontends-thesis-apps/shared';
+import { IBasket } from '@micro-frontends-thesis-apps/shared';
 import { Observable, Subject, tap } from 'rxjs';
 
-import { IBasketCheckout } from '../models/basket-checkout.model';
 import { ConfigurationService } from './configuration.service';
 import { DataService } from './data.service';
 import { SecurityService } from './security.service';
@@ -77,17 +76,6 @@ export class BasketService {
     return this.service.post(url, basket).pipe<boolean>(tap((response: any) => true));
   }
 
-  setBasketCheckout(basketCheckout: any): Observable<boolean> {
-    const url = this.basketUrl + '/b/api/v1/basket/checkout';
-
-    return this.service.postWithId(url, basketCheckout).pipe<boolean>(
-      tap((response: any) => {
-        //this.basketWrapperService.orderCreated();
-        return true;
-      })
-    );
-  }
-
   getBasket(): Observable<IBasket> {
     const url = this.basketUrl + '/b/api/v1/basket/' + this.basket.buyerId;
 
@@ -100,25 +88,6 @@ export class BasketService {
         return response;
       })
     );
-  }
-
-  mapBasketInfoCheckout(order: IOrder): IBasketCheckout {
-    const basketCheckout = <IBasketCheckout>{};
-
-    basketCheckout.street = order.street;
-    basketCheckout.city = order.city;
-    basketCheckout.country = order.country;
-    basketCheckout.state = order.state;
-    basketCheckout.zipcode = order.zipcode;
-    basketCheckout.cardexpiration = order.cardexpiration;
-    basketCheckout.cardnumber = order.cardnumber;
-    basketCheckout.cardsecuritynumber = order.cardsecuritynumber;
-    basketCheckout.cardtypeid = order.cardtypeid;
-    basketCheckout.cardholdername = order.cardholdername;
-    basketCheckout.total = 0;
-    basketCheckout.expiration = order.expiration;
-
-    return basketCheckout;
   }
 
   updateQuantity() {

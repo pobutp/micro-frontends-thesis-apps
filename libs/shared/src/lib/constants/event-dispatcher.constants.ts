@@ -1,5 +1,5 @@
 export enum GlobalCustomEvents {
-  EXAMPLE = `EXAMPLE: Example`,
+  NAVIGATE = 'GLOBAL: Navigate',
 }
 
 export enum CatalogMfeEvents {

@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/horizontal-account-mfe",
   "sourceRoot": "apps/horizontal-account-mfe/src",
-  "prefix": "ha-mfe",
+  "prefix": "ha",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",

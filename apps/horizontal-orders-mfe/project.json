@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/horizontal-orders-mfe",
   "sourceRoot": "apps/horizontal-orders-mfe/src",
-  "prefix": "micro-frontends-thesis-apps",
+  "prefix": "ho",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",

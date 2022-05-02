@@ -9,7 +9,7 @@ import { StorageService } from './storage.service';
   providedIn: 'root',
 })
 export class SecurityService {
-  public UserData: any;
+  public userData: any;
   public isAuthorized: boolean | undefined;
 
   // private actionUrl: string;
@@ -39,7 +39,7 @@ export class SecurityService {
     if (this.storage.retrieve('isAuthorized') !== '') {
       this.isAuthorized = this.storage.retrieve('isAuthorized');
       this.authenticationSource.next(true);
-      this.UserData = this.storage.retrieve('userData');
+      this.userData = this.storage.retrieve('userData');
     }
   }
 
@@ -67,7 +67,7 @@ export class SecurityService {
 
     this.getUserData().subscribe(
       (data) => {
-        this.UserData = data;
+        this.userData = data;
         this.storage.store('userData', data);
         // emit observable
         this.authenticationSource.next(true);
@@ -75,7 +75,7 @@ export class SecurityService {
       },
       (error) => this.HandleError(error),
       () => {
-        console.log(this.UserData);
+        console.log(this.userData);
       }
     );
   }
@@ -224,20 +224,6 @@ export class SecurityService {
 
     return data;
   }
-
-  //private retrieve(key: string): any {
-  //    let item = this.storage.getItem(key);
-
-  //    if (item && item !== 'undefined') {
-  //        return JSON.parse(this.storage.getItem(key));
-  //    }
-
-  //    return;
-  //}
-
-  //private store(key: string, value: any) {
-  //    this.storage.setItem(key, JSON.stringify(value));
-  //}
 
   private getUserData = (): Observable<string[]> => {
     if (this.authorityUrl === '') {

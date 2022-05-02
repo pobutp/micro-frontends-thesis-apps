@@ -3,6 +3,7 @@ import { ConfigurationService, DataService, IOrder, IOrderItem, SecurityService 
 import { Observable, tap } from 'rxjs';
 
 import { IOrderDetail } from '../models/order-detail.model';
+import { BasketService } from './basket.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class OrdersService {
 
   constructor(
     private service: DataService,
-    //private basketService: BasketWrapperService,
+    private basketService: BasketService,
     private identityService: SecurityService,
     private configurationService: ConfigurationService
   ) {
@@ -56,9 +57,8 @@ export class OrdersService {
 
   mapOrderAndIdentityInfoNewOrder(): IOrder {
     const order = <IOrder>{};
-    debugger;
-    const basket = { items: [], buyerId: '' }; // this.basketService.basket;
-    const identityInfo = this.identityService.UserData;
+    const basket = this.basketService.basket;
+    const identityInfo = this.identityService.userData;
 
     console.log(basket);
     console.log(identityInfo);
