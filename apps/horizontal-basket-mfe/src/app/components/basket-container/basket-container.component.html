@@ -1,0 +1,92 @@
+<div class="hb-basket mt-3 mb-3">
+  <div class="container">
+    <div *ngFor="let errorMessage of errorMessages">
+      <div class="hb-basket-alert row">
+        <div class="alert alert-warning" role="alert">&nbsp;{{ errorMessage }}</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <h2 class="hb-basket-title">Your shopping bag</h2>
+      </div>
+      <div class="col-12">
+        <div class="hb-basket-items row">
+          <div *ngFor="let item of basket?.items" class="col-12">
+            <article class="hb-basket-item">
+              <div class="hb-basket-thumbnail-wrapper">
+                <img class="hb-basket-thumbnail" src="{{ item.pictureUrl }}" alt="Product Name" />
+                <div (click)="deleteItem(item.id)" class="hb-basket-delete">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <img class="hb-basket-delete-svg" src="assets/icons/trash.svg" alt="Delete" />
+                  </button>
+                </div>
+              </div>
+              <div class="hb-basket-title">
+                {{ item.productName }}
+              </div>
+              <div class="hb-basket-description divider d-flex align-items-center justify-content-between">
+                <div class="">
+                  {{ item.unitPrice | number: '.2-2' }}
+                </div>
+                <div class="hb-basket-buttons d-flex justify-content-center">
+                  <div class="btn-group">
+                    <button
+                      [ngClass]="{ 'hb-basket-button': true, 'is-disabled': item.quantity === 1 }"
+                      [disabled]="item.quantity === 1"
+                      (click)="itemQuantityChanged(item, item.quantity - 1)"
+                      type="button"
+                      class="hb-basket-button btn btn-outline-secondary"
+                    >
+                      <img class="hb-basket-button-svg" src="assets/icons/dash.svg" alt="Less" />
+                    </button>
+                    <button type="button" class="hb-basket-quantity btn btn-outline-secondary" disabled>
+                      {{ item.quantity }}
+                    </button>
+                    <button
+                      (click)="itemQuantityChanged(item, item.quantity + 1)"
+                      class="hb-basket-button btn btn-outline-secondary"
+                      type="button"
+                    >
+                      <img class="hb-basket-button-svg" src="assets/icons/plus.svg" alt="More" />
+                    </button>
+                  </div>
+                </div>
+                <div class="hb-basket-price">
+                  {{ item.unitPrice * item.quantity | number: '.2-2' }}
+                </div>
+              </div>
+              <div *ngIf="item.oldUnitPrice > 0" class="">
+                &nbsp;Note that the price of this article changed in our Catalog. The old price when you originally added it to the basket
+                was $ {{ item.oldUnitPrice }}
+              </div>
+            </article>
+          </div>
+          <div class="col-12" *ngIf="!basket?.items || basket?.items?.length === 0">
+            <div class="hb-empty-basket">
+              <img class="hb-basket-basket-svg" src="assets/icons/cart3.svg" alt="Basket" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="hb-basket-checkout">
+          <div class="mb-3 u-text-sm">({{ basket?.items ? (basket?.items)!.length : 0 }} items)</div>
+
+          <div class="d-flex justify-content-between align-items-center font-weight-bolder">
+            <div>TOTAL</div>
+            <div>${{ totalPrice | number: '.2-2' }}</div>
+          </div>
+        </div>
+
+        <div class="divider u-background-brightest bt-4 mt-3">
+          <div>
+            <button [disabled]="!(isAuthorized && basket?.items?.length)" class="btn btn-primary w-100" (click)="checkOut($event)">
+              Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

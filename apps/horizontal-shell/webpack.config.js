@@ -12,9 +12,7 @@ const share = mf.share;
  * This NX_TSCONFIG_PATH environment variable is set by the @nrwl/angular:webpack-browser and it contains
  * the location of the generated temporary tsconfig file.
  */
-const tsConfigPath =
-  process.env.NX_TSCONFIG_PATH ??
-  path.join(__dirname, '../../tsconfig.base.json');
+const tsConfigPath = process.env.NX_TSCONFIG_PATH ?? path.join(__dirname, '../../tsconfig.base.json');
 
 const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
@@ -45,8 +43,9 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       remotes: {
-        // 'horizontal-catalog-mfe': 'http://localhost:4201/remoteEntry.js',
-        // 'horizontal-basket-mfe': 'http://localhost:4202/remoteEntry.js',
+        //'horizontal-catalog-mfe': 'http://localhost:4201/remoteEntry.js',
+        //'horizontal-basket-mfe':  'http://localhost:4202/remoteEntry.js',
+        //'horizontal-orders-mfe':  'http://localhost:4203/remoteEntry.js',
         //'horizontal-account-mfe': 'http://localhost:4204/remoteEntry.js',
       },
       shared: share({

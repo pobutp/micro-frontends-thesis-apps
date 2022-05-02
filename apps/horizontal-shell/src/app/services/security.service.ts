@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { StorageService } from '@micro-frontends-thesis-apps/shared';
 import { Observable, Subject } from 'rxjs';
 
 import { ConfigurationService } from './configuration.service';
-import { StorageService } from './storage.service';
 
 // TODO Adjust to shell
 @Injectable({
@@ -20,13 +20,7 @@ export class SecurityService {
   authenticationChallenge$ = this.authenticationSource.asObservable();
   private authorityUrl = '';
 
-  constructor(
-    private _http: HttpClient,
-    // private _router: Router,
-    // private route: ActivatedRoute,
-    private _configurationService: ConfigurationService,
-    private _storageService: StorageService
-  ) {
+  constructor(private _http: HttpClient, private _configurationService: ConfigurationService, private _storageService: StorageService) {
     this.headers = new HttpHeaders();
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
@@ -81,7 +75,7 @@ export class SecurityService {
     );
   }
 
-  public Authorize() {
+  public authorize() {
     this.ResetAuthorizationData();
 
     const authorizationUrl = this.authorityUrl + '/connect/authorize';

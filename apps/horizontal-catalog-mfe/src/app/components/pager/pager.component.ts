@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
 import { IPager } from '../../models/pager.model';
 
 @Component({
-  selector: 'hc-mfe-pager',
+  selector: 'hc-pager',
   templateUrl: './pager.component.html',
   styleUrls: ['./pager.component.scss'],
 })

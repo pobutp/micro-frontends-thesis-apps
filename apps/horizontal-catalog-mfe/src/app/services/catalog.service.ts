@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DataService } from '@micro-frontends-thesis-apps/shared';
 import { Observable } from 'rxjs/internal/Observable';
 import { tap } from 'rxjs/operators';
 
@@ -6,7 +7,6 @@ import { ICatalogBrand } from '../models/catalog-brand.model';
 import { ICatalogType } from '../models/catalog-type.model';
 import { ICatalog } from '../models/catalog.model';
 import { ConfigurationService } from './configuration.service';
-import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root',

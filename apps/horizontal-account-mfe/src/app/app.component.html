@@ -1,7 +1,7 @@
 <h2>Account</h2>
 
 <div *ngIf="authenticated; else notAuthenticatedTemplate">
-  <ha-mfe-account-details-form [userData]="userData"></ha-mfe-account-details-form>
+  <ha-account-details-form [userData]="userData"></ha-account-details-form>
 </div>
 
 <ng-template #notAuthenticatedTemplate>Not authenticated!</ng-template>

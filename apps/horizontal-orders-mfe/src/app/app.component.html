@@ -1,0 +1,8 @@
+<div *ngIf="authenticated; else notAuthenticatedTemplate">
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template #notAuthenticatedTemplate>
+  <h2>Orders</h2>
+  <p>Not authenticated!</p>
+</ng-template>

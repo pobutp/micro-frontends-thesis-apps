@@ -30,7 +30,7 @@
 
 <div class="container mb-4">
   <div *ngIf="catalog?.data?.length && catalog!.data.length > 0">
-    <!-- <hc-mfe-pager [model]="paginationInfo" (changed)="onPageChanged($event)"></hc-mfe-pager> -->
+    <!-- <hc--pager [model]="paginationInfo" (changed)="onPageChanged($event)"></hc-pager> -->
 
     <div class="hc-catalog-items row g-3">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of catalog?.data">
@@ -46,10 +46,10 @@
             <img class="hc-catalog-thumbnail" src="{{ item.pictureUri }}" />
           </div>
           <div class="hc-catalog-details d-flex justify-content-between align-items-center">
-            <div class="hc-catalog-name ml-3">
+            <div class="hc-catalog-name ms-3">
               <span>{{ item.name }}</span>
             </div>
-            <div class="hc-catalog-price mr-3">
+            <div class="hc-catalog-price me-3">
               <span>{{ item.price | number: '1.2-2' }}</span>
             </div>
           </div>
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <hc-mfe-pager [model]="paginationInfo" (changed)="onPageChanged($event)"></hc-mfe-pager>
+    <hc-pager [model]="paginationInfo" (changed)="onPageChanged($event)"></hc-pager>
   </div>
   <div *ngIf="catalog?.data?.length === 0">
     <span>THERE ARE NO RESULTS THAT MATCH YOUR SEARCH</span>

@@ -43,7 +43,7 @@ export class IdentityComponent implements OnInit {
   }
 
   login() {
-    this.service.Authorize();
+    this.service.authorize();
   }
 
   logout() {

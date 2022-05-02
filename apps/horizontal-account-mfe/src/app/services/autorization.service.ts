@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-
-import { StorageService } from './storage.service';
+import { StorageService } from '@micro-frontends-thesis-apps/shared';
 
 @Injectable({
   providedIn: 'root',

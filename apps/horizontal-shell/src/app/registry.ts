@@ -13,16 +13,14 @@ export const registry: Registy = {
     }),
   horizontalBasketMfe: () =>
     loadRemoteModule({
-      type: 'script',
+      type: 'module',
       remoteEntry: 'http://localhost:4202/remoteEntry.js',
-      remoteName: 'horizontalBasketMfe',
       exposedModule: './web-components',
     }),
   horizontalOrdersMfe: () =>
     loadRemoteModule({
-      type: 'script',
+      type: 'module',
       remoteEntry: 'http://localhost:4203/remoteEntry.js',
-      remoteName: 'horizontalOrdersMfe',
       exposedModule: './web-components',
     }),
   horizontalAccountMfe: () =>
