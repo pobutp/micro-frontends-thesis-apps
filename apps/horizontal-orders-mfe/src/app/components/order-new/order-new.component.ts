@@ -60,7 +60,7 @@ export class OrderNewComponent implements OnInit {
         })
       )
       .subscribe(() => {
-        this.router.navigate(['/order-account/orders']);
+        this.router.navigate(['/orders-account/orders']);
       });
     this.errorReceived = false;
     this.isOrderProcessing = true;

@@ -1,0 +1,103 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/vertical-shell/src",
+  "prefix": "micro-frontends-thesis-apps",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/vertical-shell",
+        "index": "apps/vertical-shell/src/index.html",
+        "main": "apps/vertical-shell/src/main.ts",
+        "polyfills": "apps/vertical-shell/src/polyfills.ts",
+        "tsConfig": "apps/vertical-shell/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/vertical-shell/src/favicon.ico", "apps/vertical-shell/src/assets"],
+        "styles": ["apps/vertical-shell/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/vertical-shell/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/vertical-shell/src/environments/environment.ts",
+              "with": "apps/vertical-shell/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/vertical-shell/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:module-federation-dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "vertical-shell:build:production"
+        },
+        "development": {
+          "browserTarget": "vertical-shell:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4200,
+        "publicHost": "http://localhost:4200"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "vertical-shell:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/vertical-shell/**/*.ts", "apps/vertical-shell/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/vertical-shell"],
+      "options": {
+        "jestConfig": "apps/vertical-shell/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "serve-mfe": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx serve vertical-shell", "nx serve vertical-catalog-basket-mfe", "nx serve vertical-orders-account-mfe"]
+      }
+    }
+  },
+  "tags": []
+}

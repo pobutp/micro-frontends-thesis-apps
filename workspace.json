@@ -6,6 +6,9 @@
     "horizontal-catalog-mfe": "apps/horizontal-catalog-mfe",
     "horizontal-orders-mfe": "apps/horizontal-orders-mfe",
     "horizontal-shell": "apps/horizontal-shell",
-    "shared": "libs/shared"
+    "shared": "libs/shared",
+    "vertical-catalog-basket-mfe": "apps/vertical-catalog-basket-mfe",
+    "vertical-orders-account-mfe": "apps/vertical-orders-account-mfe",
+    "vertical-shell": "apps/vertical-shell"
   }
 }

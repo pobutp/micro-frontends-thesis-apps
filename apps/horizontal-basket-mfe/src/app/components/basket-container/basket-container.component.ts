@@ -102,7 +102,7 @@ export class BasketContainerComponent implements OnInit {
   private navigateToNewOrder(): void {
     const config: CustomEventConfig = {
       detail: {
-        url: '/order-account/order',
+        url: '/orders-account/order',
       },
     };
     this.eventDispatcherService.dispatchEvent(GlobalCustomEvents.NAVIGATE, config);

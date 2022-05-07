@@ -27,7 +27,7 @@
         </a>
       </section>
       <section class="col-1">
-        <a class="ho-orders-link" routerLink="/order-account/orders/{{ order.ordernumber }}">Details</a>
+        <a class="ho-orders-link" routerLink="/orders-account/orders/{{ order.ordernumber }}">Details</a>
       </section>
     </article>
     <article *ngIf="!orders || (orders && orders.length === 0)" class="ho-orders-no-orders py-5">No orders</article>

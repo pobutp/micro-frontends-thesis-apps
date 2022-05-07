@@ -22,7 +22,7 @@ import { WrapperComponent } from './components/wrapper/wrapper.component';
           component: CatalogBasketComponent,
         },
         {
-          matcher: startsWith('order-account'),
+          matcher: startsWith('orders-account'),
           component: OrdersAccountComponent,
         },
         { path: '', redirectTo: '/catalog-basket', pathMatch: 'full' },
