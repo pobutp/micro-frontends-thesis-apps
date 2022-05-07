@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/horizontal-catalog-mfe",
   "sourceRoot": "apps/horizontal-catalog-mfe/src",
   "prefix": "hc",
   "targets": {
@@ -18,7 +17,8 @@
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/horizontal-catalog-mfe/webpack.config.js"
-        }
+        },
+        "buildLibsFromSource": false
       },
       "configurations": {
         "production": {
@@ -88,7 +88,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/horizontal-catalog-mfe"],
       "options": {
-        "jestConfig": "apps/horizontal-catalog-mfe/jest.config.js",
+        "jestConfig": "apps/horizontal-catalog-mfe/jest.config.ts",
         "passWithNoTests": true
       }
     }
