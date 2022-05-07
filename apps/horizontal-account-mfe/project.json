@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/horizontal-account-mfe",
   "sourceRoot": "apps/horizontal-account-mfe/src",
   "prefix": "ha",
   "targets": {
@@ -18,7 +17,8 @@
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/horizontal-account-mfe/webpack.config.js"
-        }
+        },
+        "buildLibsFromSource": false
       },
       "configurations": {
         "production": {
@@ -88,7 +88,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/horizontal-account-mfe"],
       "options": {
-        "jestConfig": "apps/horizontal-account-mfe/jest.config.js",
+        "jestConfig": "apps/horizontal-account-mfe/jest.config.ts",
         "passWithNoTests": true
       }
     }

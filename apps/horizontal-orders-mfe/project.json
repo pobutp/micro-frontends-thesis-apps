@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/horizontal-orders-mfe",
   "sourceRoot": "apps/horizontal-orders-mfe/src",
   "prefix": "ho",
   "targets": {
@@ -19,7 +18,8 @@
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/horizontal-orders-mfe/webpack.config.js"
-        }
+        },
+        "buildLibsFromSource": false
       },
       "configurations": {
         "production": {
@@ -89,7 +89,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/horizontal-orders-mfe"],
       "options": {
-        "jestConfig": "apps/horizontal-orders-mfe/jest.config.js",
+        "jestConfig": "apps/horizontal-orders-mfe/jest.config.ts",
         "passWithNoTests": true
       }
     }

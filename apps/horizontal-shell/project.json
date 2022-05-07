@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/horizontal-shell",
   "sourceRoot": "apps/horizontal-shell/src",
   "prefix": "hs",
   "targets": {
@@ -26,7 +25,8 @@
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/horizontal-shell/webpack.config.js"
-        }
+        },
+        "buildLibsFromSource": false
       },
       "configurations": {
         "production": {
@@ -95,7 +95,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/horizontal-shell"],
       "options": {
-        "jestConfig": "apps/horizontal-shell/jest.config.js",
+        "jestConfig": "apps/horizontal-shell/jest.config.ts",
         "passWithNoTests": true
       }
     },

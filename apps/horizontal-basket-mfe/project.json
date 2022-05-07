@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/horizontal-basket-mfe",
   "sourceRoot": "apps/horizontal-basket-mfe/src",
   "prefix": "hb",
   "targets": {
@@ -19,7 +18,8 @@
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/horizontal-basket-mfe/webpack.config.js"
-        }
+        },
+        "buildLibsFromSource": false
       },
       "configurations": {
         "production": {
@@ -89,7 +89,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/horizontal-basket-mfe"],
       "options": {
-        "jestConfig": "apps/horizontal-basket-mfe/jest.config.js",
+        "jestConfig": "apps/horizontal-basket-mfe/jest.config.ts",
         "passWithNoTests": true
       }
     }
