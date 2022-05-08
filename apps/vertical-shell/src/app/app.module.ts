@@ -1,23 +1,31 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { startsWith } from '@micro-frontends-thesis-apps/shared';
 
 import { AppComponent } from './app.component';
+import { CatalogBasketComponent } from './components/catalog-basket/catalog-basket.component';
+import { IdentityComponent } from './components/identity/identity.component';
+import { OrdersAccountComponent } from './components/orders-account/orders-account.component';
+import { WrapperComponent } from './components/wrapper/wrapper.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, IdentityComponent, CatalogBasketComponent, OrdersAccountComponent, WrapperComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {
-          path: 'catalog-basket',
-          loadChildren: () => import('vertical-catalog-basket-mfe/Module').then((m) => m.RemoteEntryModule),
+          matcher: startsWith('catalog-basket'),
+          component: CatalogBasketComponent,
         },
         {
-          path: 'orders-account',
-          loadChildren: () => import('vertical-orders-account-mfe/Module').then((m) => m.RemoteEntryModule),
+          matcher: startsWith('orders-account'),
+          component: OrdersAccountComponent,
         },
+        { path: '', redirectTo: '/catalog-basket', pathMatch: 'full' },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

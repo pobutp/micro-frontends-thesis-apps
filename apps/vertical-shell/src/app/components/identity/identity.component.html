@@ -1,0 +1,15 @@
+<ul class="nav nav-pills">
+  <ng-container *ngIf="authenticated; else notAuthenticatedTemplate">
+    <li class="nav-item">
+      <a [routerLink]="" class="nav-link mb-0" (click)="logoutClicked($event)">Log out</a>
+    </li>
+    <li class="nav-item disabled">
+      <a class="nav-link mb-0 hs-user-name">{{ userName }}</a>
+    </li>
+  </ng-container>
+  <ng-template #notAuthenticatedTemplate>
+    <li class="nav-item">
+      <a [routerLink]="" class="nav-link mb-0" (click)="login()">Log in</a>
+    </li>
+  </ng-template>
+</ul>

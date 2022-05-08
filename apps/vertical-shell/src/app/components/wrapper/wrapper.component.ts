@@ -3,9 +3,9 @@ import { AfterContentInit, Component, ElementRef, Input, ViewChild } from '@angu
 import { registry } from '../../registry';
 
 @Component({
-  selector: 'hs-wrapper',
+  selector: 'vs-wrapper',
   templateUrl: './wrapper.component.html',
-  styleUrls: ['./wrapper.component.css'],
+  styleUrls: ['./wrapper.component.scss'],
 })
 export class WrapperComponent implements AfterContentInit {
   @Input() elementName!: string;
