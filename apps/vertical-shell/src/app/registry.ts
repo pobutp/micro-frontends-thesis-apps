@@ -8,13 +8,13 @@ export const registry: Registy = {
   verticalCatalogBasketMfe: () =>
     loadRemoteModule({
       type: 'module',
-      remoteEntry: 'http://localhost:4211/remoteEntry.mjs',
+      remoteEntry: 'http://localhost:4201/remoteEntry.mjs',
       exposedModule: './web-components',
     }),
   verticalOrdersAccountMfe: () =>
     loadRemoteModule({
       type: 'module',
-      remoteEntry: 'http://localhost:4212/remoteEntry.mjs',
+      remoteEntry: 'http://localhost:4202/remoteEntry.mjs',
       exposedModule: './web-components',
     }),
 };

@@ -68,8 +68,8 @@
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4212,
-        "publicHost": "http://localhost:4212"
+        "port": 4202,
+        "publicHost": "http://localhost:4202"
       }
     },
     "extract-i18n": {
@@ -97,7 +97,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "vertical-orders-account-mfe:build",
-        "port": 4212
+        "port": 4202
       },
       "configurations": {
         "development": {

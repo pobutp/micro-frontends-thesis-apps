@@ -68,8 +68,8 @@
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4211,
-        "publicHost": "http://localhost:4211"
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
       }
     },
     "extract-i18n": {
@@ -97,7 +97,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "vertical-catalog-basket-mfe:build",
-        "port": 4211
+        "port": 4201
       },
       "configurations": {
         "development": {
