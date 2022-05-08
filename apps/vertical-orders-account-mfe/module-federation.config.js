@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'vertical-orders-account-mfe',
+  name: 'verticalOrdersAccountMfe',
   exposes: {
-    './Module': 'apps/vertical-orders-account-mfe/src/app/remote-entry/entry.module.ts',
+    './web-components': 'apps/vertical-orders-account-mfe/src/bootstrap.ts',
   },
 };

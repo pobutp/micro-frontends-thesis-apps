@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'vertical-catalog-basket-mfe',
+  name: 'verticalCatalogBasketMfe',
   exposes: {
-    './Module': 'apps/vertical-catalog-basket-mfe/src/app/remote-entry/entry.module.ts',
+    './web-components': 'apps/vertical-catalog-basket-mfe/src/bootstrap.ts',
   },
 };

@@ -1,7 +1,7 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/vertical-catalog-basket-mfe/src",
-  "prefix": "micro-frontends-thesis-apps",
+  "prefix": "vcb",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
@@ -68,8 +68,8 @@
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4301,
-        "publicHost": "http://localhost:4301"
+        "port": 4211,
+        "publicHost": "http://localhost:4211"
       }
     },
     "extract-i18n": {
@@ -97,7 +97,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "vertical-catalog-basket-mfe:build",
-        "port": 4201
+        "port": 4211
       },
       "configurations": {
         "development": {

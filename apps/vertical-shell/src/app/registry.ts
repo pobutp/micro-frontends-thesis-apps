@@ -5,16 +5,16 @@ export interface Registy {
 }
 
 export const registry: Registy = {
-  horizontalCatalogBasketMfe: () =>
+  verticalCatalogBasketMfe: () =>
     loadRemoteModule({
       type: 'module',
-      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteEntry: 'http://localhost:4211/remoteEntry.mjs',
       exposedModule: './web-components',
     }),
-  horizontalOrdersAccountMfe: () =>
+  verticalOrdersAccountMfe: () =>
     loadRemoteModule({
       type: 'module',
-      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteEntry: 'http://localhost:4212/remoteEntry.mjs',
       exposedModule: './web-components',
     }),
 };
