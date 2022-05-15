@@ -1,0 +1,52 @@
+.vcb-catalog-filters {
+  .vcb-catalog-filters-wrapper {
+    margin-bottom: 1em;
+
+    .vcb-catalog-filter-wrapper {
+      width: 200px;
+      margin-right: 0.5em;
+
+      .vcb-catalog-label {
+      }
+      .vcb-catalog-filter {
+      }
+    }
+  }
+}
+
+.vcb-catalog-item {
+  cursor: pointer;
+
+  &.is-disabled {
+    cursor: auto;
+
+    .vcb-catalog-icon-svg {
+      opacity: 0.2;
+    }
+  }
+}
+
+.vcb-catalog-thumbnail-wrapper {
+  width: 100%;
+  .vcb-catalog-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.vcb-catalog-details {
+  padding: 7px 15px;
+
+  .vcb-catalog-name {
+  }
+  .vcb-catalog-price {
+  }
+}
+
+.vcb-catalog-icon {
+  .vcb-catalog-icon-svg {
+    padding: 5px 0 10px 0;
+    height: 36px;
+    width: 36px;
+  }
+}

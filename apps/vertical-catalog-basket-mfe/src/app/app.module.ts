@@ -9,9 +9,12 @@ import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { BasketContainerComponent } from './components/basket-container/basket-container.component';
+import { CatalogContainerComponent } from './components/catalog-container/catalog-container.component';
+import { PagerComponent } from './components/pager/pager.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CatalogContainerComponent, BasketContainerComponent, PagerComponent],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [],

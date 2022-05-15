@@ -1,0 +1,31 @@
+<div class="vcb-pager">
+  <div class="container vcb-container">
+    <article class="vcb-pager-wrapper row">
+      <nav class="w-100">
+        <span
+          class="vcb-pager-item vcb-pager-item--navigable"
+          id="Previous"
+          [ngClass]="{ 'is-disabled': buttonStates?.previousDisabled }"
+          (click)="onPreviousCliked($event)"
+          aria-label="Previous"
+        >
+          Previous
+        </span>
+
+        <span class="vcb-pager-item">
+          Showing {{ model?.items }} of {{ model?.totalItems }} products - Page {{ model?.actualPage + 1 }} - {{ model?.totalPages }}
+        </span>
+
+        <span
+          class="vcb-pager-item vcb-pager-item--navigable"
+          id="Next"
+          [ngClass]="{ 'is-disabled': buttonStates?.nextDisabled }"
+          (click)="onNextClicked($event)"
+          aria-label="Next"
+        >
+          Next
+        </span>
+      </nav>
+    </article>
+  </div>
+</div>
