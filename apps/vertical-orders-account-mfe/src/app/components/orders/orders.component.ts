@@ -28,7 +28,9 @@ export class OrdersComponent implements OnInit {
       });
     }
 
-    // this.signalrService.msgReceived$.subscribe(() => this.getOrders());
+    // this.signalrService.msgReceived$.subscribe(() => {
+    //   this.getOrders();
+    // });
   }
 
   getOrders(): void {

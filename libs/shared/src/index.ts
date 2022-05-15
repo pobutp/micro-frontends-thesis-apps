@@ -13,3 +13,4 @@ export * from './lib/services/storage.service';
 export * from './lib/services/data.service';
 export * from './lib/services/security.service';
 export * from './lib/services/storage.service';
+export * from './lib/services/signalr.service';
