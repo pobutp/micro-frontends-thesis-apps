@@ -1,0 +1,7 @@
+<h2>Account</h2>
+
+<div *ngIf="authenticated; else notAuthenticatedTemplate">
+  <voa-account-details-form [userData]="userData"></voa-account-details-form>
+</div>
+
+<ng-template #notAuthenticatedTemplate>Not authenticated!</ng-template>

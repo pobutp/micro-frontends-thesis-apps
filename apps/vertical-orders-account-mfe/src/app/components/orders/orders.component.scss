@@ -1,0 +1,28 @@
+.voa-orders {
+  &-wrapper {
+    padding-top: 1rem;
+  }
+
+  &-titles {
+    text-transform: uppercase;
+  }
+
+  &-item {
+    $height: 3rem;
+    height: $height;
+    line-height: $height;
+    width: auto;
+
+    & > * {
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-link {
+    text-decoration: none;
+  }
+
+  &-no-orders {
+    text-align: center;
+  }
+}

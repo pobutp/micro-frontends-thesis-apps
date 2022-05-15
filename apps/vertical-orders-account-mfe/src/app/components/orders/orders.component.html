@@ -1,0 +1,35 @@
+<div class="voa-orders">
+  <h2>Order List</h2>
+  <div class="voa-orders-alert alert" role="alert" [hidden]="!errorReceived">Error requesting order list, please try later on</div>
+
+  <div class="voa-orders-wrapper">
+    <article class="voa-orders-titles row">
+      <section class="col-1"></section>
+      <section class="col-3">Date</section>
+      <section class="col-2">Total</section>
+      <section class="col-2">Status</section>
+      <section class="col-1"></section>
+      <section class="col-1"></section>
+    </article>
+
+    <article class="voa-orders-item divider row" *ngFor="let order of orders">
+      <section class="col-1">{{ order.ordernumber }}</section>
+      <section class="col-3">{{ order.date | date: 'short' }}</section>
+      <section class="col-2">${{ order.total }}</section>
+      <section class="col-2">{{ order.status }}</section>
+      <section class="col-1">
+        <a
+          *ngIf="order.status.toLowerCase() === 'submitted'"
+          (click)="cancelOrder(order.ordernumber)"
+          class="voa-orders-link u-cursor-pointer"
+        >
+          Cancel
+        </a>
+      </section>
+      <section class="col-1">
+        <a class="voa-orders-link" routerLink="/orders-account/orders/{{ order.ordernumber }}">Details</a>
+      </section>
+    </article>
+    <article *ngIf="!orders || (orders && orders.length === 0)" class="voa-orders-no-orders py-5">No orders</article>
+  </div>
+</div>
