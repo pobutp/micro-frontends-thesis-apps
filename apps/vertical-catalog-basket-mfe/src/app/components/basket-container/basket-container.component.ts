@@ -30,10 +30,12 @@ export class BasketContainerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.basketService.getBasket().subscribe((basket) => {
-      this.basket = basket;
-      this.calculateTotalPrice();
-    });
+    if (this.isAuthorized) {
+      this.basketService.getBasket().subscribe((basket) => {
+        this.basket = basket;
+        this.calculateTotalPrice();
+      });
+    }
 
     // TODO Change to Angular events
     this.eventDispatcherService.on(CatalogMfeEvents.ADD_PRODUCT_TO_BASKET).subscribe((event) => {
